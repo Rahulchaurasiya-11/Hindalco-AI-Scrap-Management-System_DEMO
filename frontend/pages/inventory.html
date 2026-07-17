@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindalco - Inventory Management</title>
+    <!-- Sirf aapki local CSS file, koi external heavy link nahi -->
+    <link rel="stylesheet"
+    href="../css/style.css">
+    <link rel="stylesheet" href="../css/inventory.css">
+
+</head>
+<body>
+
+    <!-- Left Sidebar Menu -->
+    <div class="sidebar">
+        <!-- <div class="logo-area"> -->
+            <div class="sidebar-brand">
+
+            <h2>Hindalco</h2>
+            </div>
+        <!-- </div> -->
+        <!-- <nav class="nav-links"> -->
+            <nav class="sidebar-menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="scrap-log.html">Scrap Log</a>
+            <a href="inventory.html" class="active">Inventory</a>
+            <a href="recycling.html">Recycling</a>
+            <a href="prediction.html">Prediction</a>
+            <a href="reports.html">Reports</a>
+
+
+
+
+
+
+
+
+
+            <div class="sidebar-footer">
+                <span class="user-name">Rahul Chaurasiya</span> <!-- Yahan apna asli naam likhein -->
+                <a href="#" onclick="logout()" class="logout-btn">Logout</a>
+            </div>
+        </nav>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <header class="content-header">
+            <h1>Scrap Inventory Status</h1>
+            <p>Live tracking of pending scraps across Hindalco Smelter Plants</p>
+        </header>
+
+        <!-- KPI Metrics Summary Cards -->
+        <div class="metrics-grid">
+            <div class="metric-card cyan">
+                <div class="card-info">
+                    <h3>Total Available Stock</h3>
+                    <p id="totalStockWeight">0 Kg</p>
+                </div>
+            </div>
+            <div class="metric-card orange">
+                <div class="card-info">
+                    <h3>Material Categories</h3>
+                    <p id="totalCategories">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="table-container">
+            <div class="table-header">
+                <h2>Current Stock Breakdown</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material Name / Scrap Type</th>
+                        <th>Total Weight Available</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTable">
+                    <!-- Data yahan load hoga -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/inventory.js"></script>
+</body>
+</html>
+
+

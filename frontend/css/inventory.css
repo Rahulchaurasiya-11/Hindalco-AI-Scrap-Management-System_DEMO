@@ -1,0 +1,163 @@
+/* ==========================================================================
+   INVENTORY PAGE SPECIFIC STYLES (Hindalco Premium Dark Theme)
+   ========================================================================== */
+
+   :root {
+    --inv-bg-dark: #0f172a;
+    --inv-sidebar-bg: #1e293b;
+    --inv-card-bg: #1e293b;
+    /* --inv-accent-cyan: #06b6d4; */
+    --inv-accent-orange: #f97316;
+    --inv-text-main: #f8fafc;
+    --inv-text-muted: #94a3b8;
+    --inv-border: #334155;
+}
+
+/* Poore page ka basic reset sirf inventory par */
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    background-color: var(--inv-bg-dark);
+    color: var(--inv-text-main);
+    display: flex;
+    min-height: 100vh;
+    /* overflow-x: hidden; */
+}
+
+/* 1. LEFT SIDEBAR FIX (Aapki scrolling problem ka solution) */
+/* .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    /* background-color: var(--inv-sidebar-bg); */
+    /* border-right: 1px solid var(--inv-border);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Agar menu items zyada ho to sidebar ke andar hi scroll ho */
+    /* z-index: 100; */*/ */
+
+
+.sidebar .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--inv-text-muted);
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links a:hover, 
+.sidebar .nav-links a.active {
+    background-color: var(--inv-accent-cyan);
+    color: #ffffff;
+}
+
+/* 2. MAIN CONTENT AREA (Sidebar ke right me auto-scroll hoga) */
+.main-content {
+    margin-left: 260px; /* Sidebar ki jagah chhod kar content shuru hoga */
+    padding: 40px;
+    width: calc(100% - 260px);
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: var(--inv-bg-dark);
+}
+
+.content-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 2rem;
+    color: var(--inv-text-main);
+}
+
+.content-header p {
+    color: var(--inv-text-muted);
+    margin: 0 0 30px 0;
+}
+
+/* 3. METRICS CARDS (Presentation me badiya impression ke liye) */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.metric-card {
+    background-color: var(--inv-card-bg);
+    border: 1px solid var(--inv-border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card.cyan .card-icon { color: var(--inv-accent-cyan); font-size: 2rem; }
+.metric-card.orange .card-icon { color: var(--inv-accent-orange); font-size: 2rem; }
+
+.card-info h3 { margin: 0; font-size: 14px; color: var(--inv-text-muted); }
+.card-info p { margin: 5px 0 0 0; font-size: 24px; font-weight: bold; color: var(--inv-text-main); }
+
+/* 4. MODERN TABLE DESIGN */
+.table-container {
+    background-color: var(--inv-card-bg);
+    border: 1px solid var(--inv-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--inv-border);
+}
+
+.table-header h2 { margin: 0; font-size: 18px; color: var(--inv-text-main); }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--inv-border);
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: var(--inv-text-muted);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.material-name { color: #ffffff; }
+.material-weight { font-weight: 600; color: var(--inv-accent-cyan); }
+
+/* 5. STATUS BADGE */
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+.badge-pending {
+    background-color: rgba(249, 115, 22, 0.15);
+    color: var(--inv-accent-orange);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}

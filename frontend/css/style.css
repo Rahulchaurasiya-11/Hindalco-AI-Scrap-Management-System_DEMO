@@ -1,0 +1,347 @@
+
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    /* background: linear-gradient(135deg, #2b0606 0%, #0f0202 100%); */
+    color:white;
+    min-height:100vh;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+
+
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #334155;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-brand h2 {
+    color: #38bdf8; /* Accent light blue color */
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-brand span {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+
+
+
+.sidebar-menu a:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+.sidebar-menu a.active {
+    background-color: #0284c7; /* Highlight active tab */
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+/* Sidebar menu ko full vertical space handle karne ke liye set karein */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px); /* Aapke header size ke hisab se adjust karein */
+}
+
+/* Is container ko automatic screen ke sabse neeche bhejne ke liye */
+.sidebar-footer {
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px; /* Sidebar ke baki items jaisa gap dene ke liye */
+}
+
+/* Aapke naam ki styling */
+.user-name {
+    color: #888; /* Halka gray rang, aap chahein toh badal sakte hain */
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px; /* Naam aur logout button ke beech ka gap */
+    padding-left: 5px;
+}
+
+/* Logout button ki styling */
+.logout-btn {
+    padding: 0 !important; /* Agar pehle se padding hai toh container ke hisab se reset karne ke liye */
+    color: #ff4d4d; /* Logout ko red color dene ke liye (optional) */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .sidebar{
+    width:250px;
+    height:100vh;
+    background:#111827;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:20px;
+    overflow-y: auto;
+} */
+
+.sidebar h2{
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    margin:8px 0;
+    border-radius:8px;
+}
+
+.sidebar a:hover{
+    background:#1e293b;
+}
+
+.main{
+    margin-left:270px;
+    padding:20px;
+    height: 100vh;
+    overflow-y: auto; /* Isse sirf dashboard area hi scroll hoga */
+    box-sizing: border-box;
+
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+    margin:10px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th,
+table td{
+    border:1px solid #334155;
+    padding:12px;
+}
+
+input,
+select,
+button{
+    padding:10px;
+    width:100%;
+    margin:8px 0;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+.bg-logo {
+    position: fixed;
+   
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
+    width: 70vw;
+    height:auto;
+    object-fit: contain;     /* Logo stretch nahi hoga, screen ko cover karega */
+    opacity: 0.08;          /* Logo ko halka (transparent) karne ke liye */
+    filter: blur(2px);     /* Logo ko halka sa blur karne ke liye */
+    z-index: -1;           /* Logo login box ke piche chala jayega */
+}
+
+/* 2. Login Box ko Screen ke Center me lana */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* 3. Modern Glassmorphism Login Box */
+.login-box {
+    background: rgba(35, 15, 15, 0.75); 
+
+  
+    /* background: rgba(30, 41, 59, 0.85); Halka transparent dark background */
+    padding: 40px;
+    border-radius: 16px;       /* Corners ko gol karne ke liye */
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(12px); /* Box ke piche ka area premium dikhega */
+    border: 1px solid rgba(224, 154, 46, 0.2); 
+}
+
+.login-box h1 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 600;
+    color: #f6ad55;
+}
+
+
+.login-box input {
+    background: rgba(20, 5, 5, 0.6);
+    border: 1px solid #4a1515;
+    color: white;
+    border-radius: 8px; 
+    padding: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #e09a2e; /* Focus karne par logo ki gold/orange border aayegi */
+    background: rgba(20, 5, 5, 0.9);
+}
+
+
+.login-box button {
+    background: #2563eb;
+    /* background: #b61c1c;  */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Button ke corners round karne ke liye */
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+    /* background: #1d4ed8;  */
+    background: #931313;
+
+}
+
+/* 5. Admin Hint Text Styling */
+.admin-hint {
+    margin-top: 20px;
+    text-align: center;
+  
+    color: #a1a1aa;
+    font-size: 14px;
+}
+
+
+
+/* Footer core layout styling */
+.dashboard-footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #3a3b3c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b0b3b8;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Developer name highighter effect */
+.dashboard-footer .developer-name {
+    color: #38bdf8; /* Isse aapka naam light blue highlight hoga */
+    font-weight: 650;
+}
+
+/* Responsive check for smaller screens */
+@media (max-width: 768px) {
+    .dashboard-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}

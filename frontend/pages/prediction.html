@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Prediction</title>
+        <title>Hindalco - AI Prediction</title>
+
+        <link rel="stylesheet"
+            href="../css/style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+    :root {
+      --bg-color: #0f172a;
+      --sidebar-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --hover-bg: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { display: flex; background-color: var(--bg-color); color: var(--text-main); height: 100vh; overflow: hidden; }
+    
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #334155;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-brand h2 {
+    color: #38bdf8; /* Accent light blue color */
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-brand span {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+
+
+
+.sidebar-menu a:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+.sidebar-menu a.active {
+    background-color: #0284c7; /* Highlight active tab */
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+
+    
+
+
+
+
+    /* Main Content Container */
+    .main { flex: 1; padding: 40px; display: flex; flex-direction: column; gap: 24px; overflow-y: auto; }
+    .main h1 { font-size: 28px; font-weight: 600; color: var(--text-main); margin-bottom: 10px; }
+    
+    /* Chart Container Dashboard Card Wrapper */
+    .chart-container { background: var(--sidebar-bg); border-radius: 16px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); border: 1px solid #334155; max-width: 900px; width: 100%; }
+  </style>
+
+    </head>
+
+    <body>
+
+        <div class="sidebar">
+             <!-- <div class="sidebar-brand"> -->
+                <div class="sidebar-brand">
+
+            <h2>Hindalco</h2>
+                </div>
+
+
+                <nav class="sidebar-menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="scrap-log.html">Scrap Log</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="recycling.html">Recycling</a>
+            <a href="prediction.html" class="active">Prediction</a>
+            <a href="reports.html">Reports</a>
+
+
+
+
+
+
+
+            <div class="sidebar-footer">
+                <span class="user-name">Rahul Chaurasiya</span> <!-- Yahan apna asli naam likhein -->
+                <a href="#" onclick="logout()" class="logout-btn">Logout</a>
+            </div>
+        </nav>
+        </div>
+</div>
+        <div class="main">
+
+            <h1>AI Prediction</h1>
+            <div class="chart-container">
+                <canvas id="predictionChart"></canvas>
+            </div>
+        </div>
+
+        <script src="../js/prediction.js"></script>
+
+    </body>
+</html>

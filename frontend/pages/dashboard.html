@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Dashboard</title>
+
+        <link rel="stylesheet"
+            href="../css/style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+
+    .dept-section {
+        margin-top: 35px;
+        background: #242526;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .dept-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        color: #fff;
+    }
+    .dept-table th, .dept-table td {
+        border: 1px solid #444;
+        padding: 12px;
+        text-align: left;
+    }
+    .dept-table th {
+        background-color: #3a3b3c;
+    }
+    .dept-table tr:nth-child(even) {
+        background-color: #2d2e30;
+    }
+    /* Card ko click-able button jaisa look dene ke liye style */
+    .clickable-card {
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .clickable-card:hover {
+        transform: scale(1.05);
+        background-color: #3a3b3c;
+    }
+</style>
+    </head>
+
+    <body>
+
+        <div class="sidebar">
+            <div class="sidebar-brand">
+
+                <h2>Hindalco</h2>
+
+            </div>
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">Dashboard</a>
+                <a href="scrap-log.html">Scrap Log</a>
+                <a href="inventory.html">Inventory</a>
+                <a href="recycling.html">Recycling</a>
+                <a href="prediction.html">Prediction</a>
+                <a href="reports.html">Reports</a>
+                <div class="sidebar-footer">
+                    <span class="user-name">Rahul Chaurasiya</span> <!-- Yahan apna asli naam likhein -->
+                    <a href="#" onclick="logout()" class="logout-btn">Logout</a>
+                </div>
+            
+                <!-- <a href="#" onclick="logout()" class="logout-btn">Logout</a> -->
+                
+            </nav>
+        </div>
+
+        <div class="main">
+
+            <h1> Scrap Management Dashboard</h1>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Generated</h3>
+                    <h2 id="generated">0 Kg</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Total Recycled</h3>
+                    <h2 id="recycled">0 Kg</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Pending</h3>
+                    <h2 id="pending">0 Kg</h2>
+                </div>
+
+                <div class="card clickable-card"
+                    onclick="scrollToDepartments()">
+                    <h3>Departments (Click to View)</h3>
+                    <h2 id="departments">0</h2>
+                </div>
+
+                <!-- <div class="card">
+<h3>Departments</h3>
+<h2 id="departments">0</h2>
+</div> -->
+
+            </div>
+
+            <br>
+            <div class="chart-container"
+                style="position: relative; height:40vh; width:80vw; margin: auto;">
+                <canvas id="chart"></canvas>
+
+            </div>
+            <div id="deptSection" class="dept-section">
+                <h2>Active Plant Departments</h2>
+                <table class="dept-table">
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Department Name</th>
+                            <th>Plant Location</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deptTableBody">
+                        <!-- Data JavaScript se automatic yahan fill hoga -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="card">
+                    <h3>Live Total Scrap</h3>
+                    <p id="liveScrap">Loading...</p>
+                </div>
+                <div class="card">
+                    <h3>6-Month Forecast Peak</h3>
+                    <p id="forecastPeak" style="color: #38bdf8;">Loading...</p>
+                </div>
+            </div>
+
+  
+
+
+
+ 
+
+    <!-- YAHAN SE FOOTER CODE COPIY KAREIN -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2026 Hindalco Scrap Management. All Rights Reserved.
+        Developed with by <span class="developer-name">Rahul Chaurasiya</span>
+    </p>
+
+    </footer>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="../js/dashboard.js"></script>
+
+    </body>
+</html>

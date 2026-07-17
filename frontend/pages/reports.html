@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Reports - Hindalco</title>
+
+        <link rel="stylesheet"
+            href="../css/style.css">
+            <!-- <link rel="stylesheet" href="https://cloudflare.com"> -->
+
+<style>
+
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    display: flex;
+    background-color: #0f172a; /* Smooth Dark Blue/Gray Slate Background */
+    color: #f8fafc;
+    min-height: 100vh;
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #334155;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-brand h2 {
+    color: #38bdf8; /* Accent light blue color */
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-brand span {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+
+
+
+.sidebar-menu a:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+.sidebar-menu a.active {
+    background-color: #0284c7; /* Highlight active tab */
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+/* Main Content Area */
+.main-content {
+    margin-left: 260px; /* Sidebar width space allocation */
+    padding: 40px;
+    width: calc(100% - 260px);
+}
+
+.main-header h1 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.main-header p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* Report Custom Box/Card Layout */
+.report-container {
+    max-width: 800px;
+}
+
+
+.report-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    background-color: rgba(2, 132, 199, 0.15);
+    color: #000000;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 28px;
+}
+
+.card-details h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card-details p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.meta-info {
+    display: flex;
+    gap: 24px;
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 24px;
+    background-color: #0f172a;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+}
+
+/* Premium Download Button */
+.btn-download {
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-download:hover {
+    background-color: #0369a1;
+}
+
+.btn-download:active {
+    transform: scale(0.98);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+    </head>
+
+    <body>
+
+        <div class="sidebar">
+
+             <div class="sidebar-brand">
+            <h2>Hindalco</h2>
+            <!-- <span>AI Scrap Management</span> -->
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+            <a href="scrap-log.html"><i class="fa-solid fa-clipboard-list"></i> Scrap Log</a>
+            <a href="inventory.html"><i class="fa-solid fa-warehouse"></i> Inventory</a>
+            <a href="recycling.html"><i class="fa-solid fa-recycle"></i> Recycling</a>
+            <a href="prediction.html"><i class="fa-solid fa-brain"></i> Prediction</a>
+            <a href="reports.html" class="active"><i class="fa-solid fa-file-pdf"></i> Reports</a>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="sidebar-footer">
+                <span class="user-name">Rahul Chaurasiya</span> <!-- Yahan apna asli naam likhein -->
+                <a href="#" onclick="logout()" class="logout-btn">Logout</a>
+            </div>
+        </nav>
+
+
+</div>
+
+
+
+
+        <!-- <nav class="sidebar-menu">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="scrap-log.html">Scrap Log</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="recycling.html">Recycling</a>
+            <a href="prediction.html">Prediction</a>
+            <a href="reports.html">Reports</a>
+
+         </div> --> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+        <div class="main">
+
+            <!-- <h1>Reports</h1> -->
+            <h1>Reports & Analytics</h1>
+            <p>Download and manage system generated multi-format logs</p>
+
+
+            <div class="report-container">
+
+                <div class="report-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <div class="card-details">
+                        <h3>Automated Scrap Audit Report</h3>
+                        <p>Includes live inventory status, modification history, recycling metrics, and authorized AI digital verifications.</p>
+                        
+                        <div class="meta-info">
+                            <span><strong>Format:</strong> PDF Document</span>
+                            <span><strong>Default Department:</strong> Scrap & Recycling Division</span>
+                        </div>
+    
+
+  <!-- PDF Download Button -->
+  <button class="btn-download" onclick="downloadPDF()">
+    <i class="fa-solid fa-cloud-arrow-down"></i> Download PDF Report
+</button>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+            <!-- <button onclick="downloadPDF()">
+                Download PDF Report
+            </button> -->
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="../js/reports.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    </body>
+</html>
