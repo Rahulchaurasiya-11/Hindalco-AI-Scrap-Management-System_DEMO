@@ -1,5 +1,5 @@
-require("dotenv").config();
 const path = require('path');
+require("dotenv").config();
 
 
 const express = require("express");
@@ -35,6 +35,9 @@ app.use("/api/dashboard",dashboardRoutes);
 app.use("/api/inventory",inventoryRoutes);
 app.use("/api/predictions",predictionRoutes);
 app.use("/api/reports",reportsRoutes);
+
+app.use(express.static(path.join(__dirname, '../frontend')));
+
 // app.get("/", (req, res) => {
   //   res.send("Hindalco AI Scrap Management API Running");
   // });
@@ -52,15 +55,17 @@ app.use("/api/reports",reportsRoutes);
         // });
         
         
-        const PORT = process.env.PORT || 5000;
         
-        
-        
-        app.use(express.static(path.join(__dirname, '../frontend')));
         app.get('*', (req, res) => {
-          res.sendFile(path.join(__dirname, '../frontend', '../frontend/pages/login.html'));
+          res.sendFile(path.join(__dirname, '../frontend', 'login.html'));
         });
-
+        
+        // app.use(express.static(path.join(__dirname, '../frontend')));
+        // app.get('*', (req, res) => {
+          //   res.sendFile(path.join(__dirname, '../frontend', '../frontend/pages/login.html'));
+          // });
+          
+          const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server Running on ${PORT}`);
