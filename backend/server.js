@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require('path');
 
 const express = require("express");
 const cors = require("cors");
@@ -19,6 +20,7 @@ const reportsRoutes = require("./routes/reportsRoutes");
 connectDB();
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, 'frontend'))); 
 
 // app.use("/api/scrap",scrapRoutes);
 app.use(express.json());
@@ -45,7 +47,9 @@ app.get("/test-report", (req,res)=>{
 //   res.send(" RAHUL TEST SERVER");
 // });
 
-
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
 
 
 const PORT = process.env.PORT || 5000;
