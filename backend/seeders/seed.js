@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const Department = require("../models/Department");
-const User = require("../models/User");
+const User = require("../models/user");
 
 mongoose.connect(process.env.MONGO_URI);
 
