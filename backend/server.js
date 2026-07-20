@@ -1,8 +1,7 @@
-const path = require('path');
 require("dotenv").config();
-
-
+const path = require('path');
 const express = require("express");
+
 const cors = require("cors");
 
 const connectDB = require("./config/db");
@@ -56,7 +55,7 @@ app.use(express.static(path.join(__dirname, '../frontend')));
         
         
         
-        app.get('*', (req, res) => {
+        app.get('/*any', (req, res) => {
           res.sendFile(path.join(__dirname, '../frontend', 'login.html'));
         });
         
